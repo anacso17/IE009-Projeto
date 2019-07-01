@@ -1,13 +1,13 @@
-function eco_teste1(plota)
+function gera_eco_um_atraso(plota)
 
 if nargin < 1
     plota = 1;
 end
 
-[s, fs, f1] = cria_sinal(0);
+[s, fs, f1] = cria_sinal;
 
-nz = floor(randi([10 200])*fs/f1)
-% nz = round(fs/6);
+% nz = floor(randi([10 100])*fs/f1);
+nz = 14700;
 
 h = [1 zeros(1, nz) 0.2 zeros(1, nz) 0.05 zeros(1, nz) 0.02];
 y = conv(s, h);
@@ -36,5 +36,6 @@ end
 
 sound(y, fs)
 audiowrite(['L=', int2str(nz), '.wav'], y, fs)
+% audiowrite(['ref.wav'], y, fs)
 
 end
