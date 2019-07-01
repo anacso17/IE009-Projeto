@@ -1,7 +1,7 @@
 function [audio, fs, f1] = cria_sinal(toca)
 
 if nargin < 1
-    toca = 1;
+    toca = 0;
 end
 
 % sinal original
